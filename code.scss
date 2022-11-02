@@ -1,0 +1,145 @@
+code,
+pre {
+  position: relative;
+  color: #ccc;
+  background: #2d2d2d;
+  font-family: "Cascadia Code", monospace;
+  font-weight: 600;
+  font-size: 0.875em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.7;
+  tab-size: 4;
+  hyphens: none;
+}
+
+pre {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.8em 1em;
+  margin: 0.5em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 0.7em;
+  box-shadow: 0 0 1em rgb(0 0 0 / 20%);
+
+  &::after {
+    content: attr(class);
+    display: inline-block;
+    font-size: 1rem;
+    opacity: 0.7;
+    position: sticky;
+    right: 0;
+    text-transform: uppercase;
+    top: 100%;
+    text-align: right;
+    transform: translate(-16px, 10px);
+    width: 200px;
+    height: fit-content;
+  }
+
+  &[class~="language-js"]::after {
+    content: "js";
+  }
+
+  &[class~="language-jsx"]::after {
+    content: "jsx";
+  }
+
+  &[class~="language-html"]::after {
+    content: "html";
+  }
+
+  &[class~="language-css"]::after {
+    content: "css";
+  }
+
+  &[class~="language-powershell"]::after {
+    content: "powershell";
+  }
+
+  &[class~="language-tsx"]::after {
+    content: "tsx";
+  }
+
+  &[class~="language-text"]::after {
+    content: "text";
+  }
+
+  &[class~="language-md"]::after {
+    content: "md";
+  }
+
+  &[class~="language-ts"]::after {
+    content: "ts";
+  }
+}
+
+code:not([class]) {
+  padding: 0.2em;
+  border-radius: 0.2em;
+  font-size: 85%;
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token {
+  &:is(.comment, .block-comment, .prolog, .doctype, .cdata) {
+    color: #999;
+  }
+
+  &:is(.punctuation) {
+    color: #ccc;
+  }
+
+  &:is(.tag, .attr-name, .namespace, .deleted) {
+    color: #e2777a;
+  }
+
+  &:is(.function-name) {
+    color: #6196cc;
+  }
+
+  &:is(.boolean, .number, .function) {
+    color: #ffa365;
+  }
+
+  &:is(.property, .class-name, .constant, .symbol) {
+    color: #f8c555;
+  }
+
+  &:is(.selector, .important, .atrule, .keyword, .builtin) {
+    color: #f79ff9;
+  }
+
+  &:is(.string, .char, .attr-value, .regex, .variable) {
+    color: #78cf98;
+  }
+
+  &:is(.operator, .entity, .url) {
+    color: #67cdcc;
+  }
+
+  &:is(.important, .bold) {
+    font-weight: bold;
+  }
+
+  &:is(.italic) {
+    font-style: italic;
+  }
+
+  &:is(.entity) {
+    cursor: help;
+  }
+
+  &:is(.inserted) {
+    color: green;
+  }
+}
