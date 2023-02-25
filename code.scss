@@ -95,16 +95,8 @@ code:not([class]) {
     color: #999;
   }
 
-  &:is(.punctuation) {
-    color: #ccc;
-  }
-
   &:is(.tag, .attr-name, .namespace, .deleted) {
     color: #e2777a;
-  }
-
-  &:is(.function-name) {
-    color: #6196cc;
   }
 
   &:is(.boolean, .number, .function) {
@@ -131,15 +123,23 @@ code:not([class]) {
     font-weight: bold;
   }
 
-  &:is(.italic) {
+  .function-name {
+    color: #6196cc;
+  }
+
+  .punctuation {
+    color: #ccc;
+  }
+
+  .italic {
     font-style: italic;
   }
 
-  &:is(.entity) {
+  .entity {
     cursor: help;
   }
 
-  &:is(.inserted) {
+  .inserted {
     color: green;
   }
 }
